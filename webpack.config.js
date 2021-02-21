@@ -67,10 +67,16 @@ module.exports = {
 					},
 					{
 						loader: "postcss-loader",
-
 						options: {
-							plugins: function () {
-								return [precss, autoprefixer];
+							postcssOptions: {
+								plugins: [
+									[
+										"postcss-preset-env",
+										{
+											// Options
+										},
+									],
+								],
 							},
 						},
 					},
