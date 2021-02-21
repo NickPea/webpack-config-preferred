@@ -8,7 +8,7 @@ module.exports = {
 	mode: "development",
 
 	entry: {
-		main: "./src/app.ts",
+		main: "./src/app",
 	},
 	output: {
 		filename: "[name].[contenthash].bundle.js",
@@ -59,7 +59,6 @@ module.exports = {
 					},
 					{
 						loader: "css-loader",
-
 						options: {
 							importLoaders: 1,
 							sourceMap: true,
@@ -76,11 +75,17 @@ module.exports = {
 											// Options
 										},
 									],
+									"precss",
+									"autoprefixer",
 								],
 							},
 						},
 					},
 				],
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: "asset/resource",
 			},
 		],
 	},
